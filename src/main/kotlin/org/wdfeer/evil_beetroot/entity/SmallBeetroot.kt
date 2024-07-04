@@ -7,8 +7,10 @@ import net.minecraft.entity.SpawnGroup
 import net.minecraft.entity.ai.goal.*
 import net.minecraft.entity.attribute.DefaultAttributeContainer
 import net.minecraft.entity.attribute.EntityAttributes
+import net.minecraft.entity.damage.DamageSource
 import net.minecraft.entity.mob.HostileEntity
 import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.item.Items
 import net.minecraft.util.Identifier
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.EvilBeetrootMod
@@ -39,5 +41,11 @@ class SmallBeetroot(world: World?) : HostileEntity(TYPE, world) {
         this.goalSelector.add(5, LookAroundGoal(this))
 
         this.targetSelector.add(1, ActiveTargetGoal(this, PlayerEntity::class.java, true))
+    }
+
+    override fun dropLoot(damageSource: DamageSource?, causedByPlayer: Boolean) {
+        super.dropLoot(damageSource, causedByPlayer)
+
+        this.dropItem(Items.BEETROOT, 1)
     }
 }
