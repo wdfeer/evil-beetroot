@@ -11,6 +11,7 @@ import net.minecraft.entity.damage.DamageSource
 import net.minecraft.entity.mob.HostileEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Items
+import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.util.Identifier
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.EvilBeetrootMod
@@ -47,5 +48,14 @@ class SmallBeetroot(world: World?) : HostileEntity(TYPE, world) {
         super.dropLoot(damageSource, causedByPlayer)
 
         dropItem(Items.BEETROOT, 1)
+    }
+
+    override fun onDeath(damageSource: DamageSource?) {
+        super.onDeath(damageSource)
+
+        if (damageSource != null && damageSource.attacker is ServerPlayerEntity){
+            val player: ServerPlayerEntity = damageSource.attacker as ServerPlayerEntity
+            BeetrootBossSpawner.onSmallBeetrootKilled(player)
+        }
     }
 }

@@ -1,4 +1,6 @@
 {
   "entity.evil_beetroot.small_beetroot": "Small Beetroot",
-  "entity.evil_beetroot.beetroot_boss": "Beetroot Boss"
+  "entity.evil_beetroot.beetroot_boss": "Beetroot Boss",
+
+  "evil_beetroot.boss_triggered": "You feel an ominous presence upon you."
 }
