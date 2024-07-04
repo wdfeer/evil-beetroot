@@ -13,6 +13,6 @@ object EntityModelLayers {
 
     fun initialize() {
         EntityModelLayerRegistry.registerModelLayer(SMALL_BEETROOT_MODEL_LAYER) { SmallBeetrootModel.texturedModelData }
-        EntityModelLayerRegistry.registerModelLayer(BEETROOT_BOSS_MODEL_LAYER) { BeetrootBossModel.texturedModelData }
+        EntityModelLayerRegistry.registerModelLayer(BEETROOT_BOSS_MODEL_LAYER) { BeetrootBossModel.getTexturedModelData() }
     }
 }

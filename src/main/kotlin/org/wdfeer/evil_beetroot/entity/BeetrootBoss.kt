@@ -21,7 +21,7 @@ class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
         val TYPE: EntityType<BeetrootBoss> = FabricEntityTypeBuilder.create(
             SpawnGroup.MISC
         ) { _, world -> BeetrootBoss(world) }
-            .dimensions(EntityDimensions.fixed(2f, 2f))
+            .dimensions(EntityDimensions.fixed(3.5f, 3.5f))
             .build()
         
         fun getIdentifier(): Identifier = EvilBeetrootMod.getIdentifier("beetroot_boss")
@@ -43,6 +43,8 @@ class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
         goalSelector.add(5, LookAroundGoal(this))
 
         targetSelector.add(1, ActiveTargetGoal(this, PlayerEntity::class.java, true))
+
+        experiencePoints *= 10
     }
 
     override fun dropLoot(damageSource: DamageSource?, causedByPlayer: Boolean) {
