@@ -7,12 +7,11 @@ import org.wdfeer.evil_beetroot.entity.common.MobAttributes
 import org.wdfeer.evil_beetroot.entity.common.MobSpawnManager
 import org.wdfeer.evil_beetroot.entity.common.ModEntityTypes
 
-class EvilBeetrootMod : ModInitializer {
-	companion object {
-		const val MOD_ID = "evil_beetroot"
+object EvilBeetrootMod : ModInitializer {
+	const val MOD_ID = "evil_beetroot"
 
-		fun getIdentifier(localName: String): Identifier = Identifier(MOD_ID, localName)
-	}
+	fun getIdentifier(localName: String): Identifier = Identifier(MOD_ID, localName)
+
     private val logger = LoggerFactory.getLogger(MOD_ID)
 
 	override fun onInitialize() {

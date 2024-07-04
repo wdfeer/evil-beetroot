@@ -18,25 +18,26 @@ import org.wdfeer.evil_beetroot.EvilBeetrootMod
 class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
     companion object {
         val TYPE: EntityType<BeetrootBoss> = FabricEntityTypeBuilder.create(
-            SpawnGroup.CREATURE
+            SpawnGroup.MISC
         ) { _, world -> BeetrootBoss(world) }
-            .dimensions(EntityDimensions.fixed(0.75f, 0.75f))
+            .dimensions(EntityDimensions.fixed(2f, 2f))
             .build()
         
-        fun getIdentifier(): Identifier = EvilBeetrootMod.getIdentifier("small_beetroot")
+        fun getIdentifier(): Identifier = EvilBeetrootMod.getIdentifier("beetroot_boss")
 
         fun createMobAttributes(): DefaultAttributeContainer.Builder {
             return HostileEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 15.0)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.33)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 100.0)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.4)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10.0)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 80.0)
         }
     }
 
     init {
         goalSelector.add(1, SwimGoal(this))
         goalSelector.add(2, MeleeAttackGoal(this, 1.0, true))
-        goalSelector.add(3, WanderAroundGoal(this, 1.0))
+        goalSelector.add(3, WanderAroundGoal(this, 0.5))
         goalSelector.add(4, LookAtEntityGoal(this, PlayerEntity::class.java, 8.0f))
         goalSelector.add(5, LookAroundGoal(this))
 

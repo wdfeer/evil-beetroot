@@ -1,12 +1,12 @@
 package org.wdfeer.evil_beetroot.entity.common
 
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttributeRegistry
+import org.wdfeer.evil_beetroot.entity.BeetrootBoss
 import org.wdfeer.evil_beetroot.entity.SmallBeetroot
 
-class MobAttributes {
-    companion object {
-        fun initialize() {
-            FabricDefaultAttributeRegistry.register(SmallBeetroot.TYPE, SmallBeetroot.createMobAttributes())
-        }
+object MobAttributes {
+    fun initialize() {
+        FabricDefaultAttributeRegistry.register(SmallBeetroot.TYPE, SmallBeetroot.createMobAttributes())
+        FabricDefaultAttributeRegistry.register(BeetrootBoss.TYPE, BeetrootBoss.createMobAttributes())
     }
 }

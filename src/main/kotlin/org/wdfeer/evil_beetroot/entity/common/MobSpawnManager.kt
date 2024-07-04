@@ -11,28 +11,26 @@ import net.minecraft.util.math.random.Random
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.entity.SmallBeetroot
 
-class MobSpawnManager {
-    companion object {
-        fun initialize() {
-            PlayerBlockBreakEvents.AFTER.register(::afterBlockBroken)
-        }
+object MobSpawnManager {
+    fun initialize() {
+        PlayerBlockBreakEvents.AFTER.register(::afterBlockBroken)
+    }
 
-        private fun afterBlockBroken(world: World, player: PlayerEntity, pos: BlockPos, state: BlockState, blockEntity: BlockEntity?) {
-            if (state.block == Blocks.BEETROOTS && (Blocks.BEETROOTS as CropBlock).getAge(state) == 3)
-                afterBeetrootHarvested(world, pos)
-        }
+    private fun afterBlockBroken(world: World, player: PlayerEntity, pos: BlockPos, state: BlockState, blockEntity: BlockEntity?) {
+        if (state.block == Blocks.BEETROOTS && (Blocks.BEETROOTS as CropBlock).getAge(state) == 3)
+            afterBeetrootHarvested(world, pos)
+    }
 
-        private fun afterBeetrootHarvested(world: World, pos: BlockPos){
-            if (Random.create().nextFloat() < getSmallBeetrootSpawnChance())
-                summonSmallBeetroot(world, pos)
-        }
+    private fun afterBeetrootHarvested(world: World, pos: BlockPos){
+        if (Random.create().nextFloat() < getSmallBeetrootSpawnChance())
+            summonSmallBeetroot(world, pos)
+    }
 
-        private fun getSmallBeetrootSpawnChance(): Float = 0.05f
+    private fun getSmallBeetrootSpawnChance(): Float = 0.05f
 
-        private fun summonSmallBeetroot(world: World, pos: BlockPos) {
-            val beetroot = SmallBeetroot(world)
-            beetroot.setPos(pos.x.toDouble(), pos.y + 0.5, pos.z.toDouble())
-            world.spawnEntity(beetroot)
-        }
+    private fun summonSmallBeetroot(world: World, pos: BlockPos) {
+        val beetroot = SmallBeetroot(world)
+        beetroot.setPos(pos.x.toDouble(), pos.y + 0.5, pos.z.toDouble())
+        world.spawnEntity(beetroot)
     }
 }
