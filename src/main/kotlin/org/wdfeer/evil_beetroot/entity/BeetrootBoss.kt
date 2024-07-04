@@ -15,11 +15,11 @@ import net.minecraft.util.Identifier
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.EvilBeetrootMod
 
-class SmallBeetroot(world: World?) : HostileEntity(TYPE, world) {
+class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
     companion object {
-        val TYPE: EntityType<SmallBeetroot> = FabricEntityTypeBuilder.create(
+        val TYPE: EntityType<BeetrootBoss> = FabricEntityTypeBuilder.create(
             SpawnGroup.CREATURE
-        ) { _, world -> SmallBeetroot(world) }
+        ) { _, world -> BeetrootBoss(world) }
             .dimensions(EntityDimensions.fixed(0.75f, 0.75f))
             .build()
         
