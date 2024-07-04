@@ -17,7 +17,7 @@
 	"entrypoints": {
 		"main": [
 			{
-				"value": "org.wdfeer.evil_beetroot.EvilBeetroot",
+				"value": "org.wdfeer.evil_beetroot.EvilBeetrootMod",
 				"adapter": "kotlin"
 			}
 		],
