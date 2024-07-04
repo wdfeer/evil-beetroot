@@ -4,8 +4,8 @@ import net.minecraft.client.model.*
 import net.minecraft.client.render.VertexConsumer
 import net.minecraft.client.render.entity.model.EntityModel
 import net.minecraft.client.util.math.MatrixStack
+import org.wdfeer.evil_beetroot.ModelRotationHelper
 import org.wdfeer.evil_beetroot.entity.SmallBeetroot
-import kotlin.math.cos
 
 // Made with Blockbench 4.10.3
 // Exported for Minecraft version 1.17+ for Yarn
@@ -22,17 +22,9 @@ class SmallBeetrootModel(root: ModelPart) : EntityModel<SmallBeetroot?>() {
         netHeadYaw: Float,
         headPitch: Float
     ) {
-        // Set head angles based on input parameters
-        head.yaw = netHeadYaw * (Math.PI.toFloat() / 180f)
-        head.pitch = headPitch * (Math.PI.toFloat() / 180f)
+        ModelRotationHelper.rotateHead(head, netHeadYaw, headPitch)
 
-        // Calculate the walking animation angles for the legs
-        val rightLegRotation = cos(limbSwing * 0.6662f) * 1.4f * limbSwingAmount
-        val leftLegRotation = cos(limbSwing * 0.6662f + Math.PI.toFloat()) * 1.4f * limbSwingAmount
-
-        // Set leg angles
-        rightLeg.pitch = rightLegRotation
-        leftLeg.pitch = leftLegRotation
+        ModelRotationHelper.rotateLegs(leftLeg, rightLeg, limbSwing, limbSwingAmount * 1.3f)
     }
 
     override fun render(
