@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "evil-beetroot",
+	"id": "evil_beetroot",
 	"version": "${version}",
 	"name": "Evil Beetroot",
 	"description": "This is an example description! Tell everyone what your mod is about!",
@@ -12,7 +12,7 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/evil-beetroot/icon.png",
+	"icon": "assets/evil_beetroot/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -29,9 +29,9 @@
 		]
 	},
 	"mixins": [
-		"evil-beetroot.mixins.json",
+		"evil_beetroot.mixins.json",
 		{
-			"config": "evil-beetroot.client.mixins.json",
+			"config": "evil_beetroot.client.mixins.json",
 			"environment": "client"
 		}
 	],

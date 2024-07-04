@@ -23,7 +23,7 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"evil-beetroot" {
+		"evil_beetroot" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
