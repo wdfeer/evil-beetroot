@@ -29,13 +29,14 @@ object MobSpawnManager {
     private const val BOSS_INTERVAL: Int = 1000
 
     private fun afterBeetrootHarvested(world: World, pos: BlockPos){
-        if (beetroots % 100 == 0 && world.time - lastBossTime > BOSS_INTERVAL)
+        if (beetroots > 1 && beetroots % 100 == 0 && world.time - lastBossTime > BOSS_INTERVAL)
         {
             summonEntity(BeetrootBoss(world) ,world, pos)
             lastBossTime = world.time
         }
         else if (Random.create().nextFloat() < getSmallBeetrootSpawnChance())
             summonEntity(SmallBeetroot(world) ,world, pos)
+
         beetroots++
     }
 
