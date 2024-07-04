@@ -7,7 +7,6 @@ import net.minecraft.client.render.entity.model.EntityModel
 import net.minecraft.client.render.entity.model.EntityModelPartNames
 import net.minecraft.client.util.math.MatrixStack
 import org.wdfeer.evil_beetroot.entity.SmallBeetroot
-import java.awt.Color
 
 
 class SmallBeetrootModel(modelPart: ModelPart) : EntityModel<SmallBeetroot>() {
