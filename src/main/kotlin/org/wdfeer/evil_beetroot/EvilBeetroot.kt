@@ -3,10 +3,13 @@ package org.wdfeer.evil_beetroot
 import net.fabricmc.api.ModInitializer
 import org.slf4j.LoggerFactory
 
-object EvilBeetroot : ModInitializer {
-    private val logger = LoggerFactory.getLogger("evil_beetroot")
+class EvilBeetroot : ModInitializer {
+	companion object {
+		public const val MOD_ID = "evil_beetroot"
+	}
+    private val logger = LoggerFactory.getLogger(MOD_ID)
 
 	override fun onInitialize() {
-		logger.info("Hello Fabric world!")
+
 	}
 }
