@@ -1,34 +1,29 @@
 package org.wdfeer.evil_beetroot.model
 
-import com.google.common.collect.ImmutableList
 import net.minecraft.client.model.*
 import net.minecraft.client.render.VertexConsumer
 import net.minecraft.client.render.entity.model.EntityModel
-import net.minecraft.client.render.entity.model.EntityModelPartNames
 import net.minecraft.client.util.math.MatrixStack
 import org.wdfeer.evil_beetroot.entity.SmallBeetroot
 
-
-class SmallBeetrootModel(modelPart: ModelPart) : EntityModel<SmallBeetroot>() {
-    companion object {
-        fun getTexturedModelData(): TexturedModelData {
-            val modelData = ModelData()
-            val modelPartData = modelData.root
-            modelPartData.addChild(
-                EntityModelPartNames.CUBE,
-                ModelPartBuilder.create().uv(0, 0).cuboid(-6f, 12f, -6f, 12f, 12f, 12f),
-                ModelTransform.pivot(0f, 0f, 0f)
-            )
-            return TexturedModelData.of(modelData, 64, 64)
-        }
+// Made with Blockbench 4.10.3
+// Exported for Minecraft version 1.17+ for Yarn
+// Paste this class into your mod and generate all required imports
+class SmallBeetrootModel(root: ModelPart) : EntityModel<SmallBeetroot?>() {
+    private val bb_main: ModelPart = root.getChild("bb_main")
+    override fun setAngles(
+        entity: SmallBeetroot?,
+        limbSwing: Float,
+        limbSwingAmount: Float,
+        ageInTicks: Float,
+        netHeadYaw: Float,
+        headPitch: Float
+    ) {
     }
 
-    private var base: ModelPart = modelPart.getChild(EntityModelPartNames.CUBE)
-
-
     override fun render(
-        matrices: MatrixStack?,
-        vertices: VertexConsumer?,
+        matrices: MatrixStack,
+        vertexConsumer: VertexConsumer,
         light: Int,
         overlay: Int,
         red: Float,
@@ -36,28 +31,22 @@ class SmallBeetrootModel(modelPart: ModelPart) : EntityModel<SmallBeetroot>() {
         blue: Float,
         alpha: Float
     ) {
-        ImmutableList.of(this.base).forEach { modelRenderer ->
-            modelRenderer.render(
-                matrices,
-                vertices,
-                light,
-                overlay,
-                1f,
-                1f,
-                1f,
-                alpha
-            )
-        }
+        bb_main.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha)
     }
 
-    override fun setAngles(
-        entity: SmallBeetroot?,
-        limbAngle: Float,
-        limbDistance: Float,
-        animationProgress: Float,
-        headYaw: Float,
-        headPitch: Float
-    ) {
-
+    companion object {
+        val texturedModelData: TexturedModelData
+            get() {
+                val modelData = ModelData()
+                val modelPartData = modelData.root
+                val bb_main = modelPartData.addChild(
+                    "bb_main",
+                    ModelPartBuilder.create().uv(0, 0).cuboid(-6.0f, -19.0f, -6.0f, 12.0f, 12.0f, 12.0f, Dilation(0.0f))
+                        .uv(16, 24).cuboid(-6.0f, -7.0f, -2.0f, 4.0f, 7.0f, 4.0f, Dilation(0.0f))
+                        .uv(0, 24).cuboid(2.0f, -7.0f, -2.0f, 4.0f, 7.0f, 4.0f, Dilation(0.0f)),
+                    ModelTransform.pivot(0.0f, 24.0f, 0.0f)
+                )
+                return TexturedModelData.of(modelData, 64, 64)
+            }
     }
 }

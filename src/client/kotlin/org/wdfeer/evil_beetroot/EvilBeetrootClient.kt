@@ -15,6 +15,6 @@ object EvilBeetrootClient : ClientModInitializer {
 	override fun onInitializeClient() {
 		EntityRendererRegistry.register(ModEntityTypes.SMALL_BEETROOT) { context -> SmallBeetrootRenderer(context) }
 
-		EntityModelLayerRegistry.registerModelLayer(SMALL_BEETROOT_MODEL_LAYER, SmallBeetrootModel::getTexturedModelData)
+		EntityModelLayerRegistry.registerModelLayer(SMALL_BEETROOT_MODEL_LAYER) { SmallBeetrootModel.texturedModelData }
 	}
 }
