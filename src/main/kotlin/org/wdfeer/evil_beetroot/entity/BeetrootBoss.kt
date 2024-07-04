@@ -10,6 +10,7 @@ import net.minecraft.entity.attribute.EntityAttributes
 import net.minecraft.entity.damage.DamageSource
 import net.minecraft.entity.mob.HostileEntity
 import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.item.ItemStack
 import net.minecraft.item.Items
 import net.minecraft.util.Identifier
 import net.minecraft.world.World
@@ -47,6 +48,6 @@ class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
     override fun dropLoot(damageSource: DamageSource?, causedByPlayer: Boolean) {
         super.dropLoot(damageSource, causedByPlayer)
 
-        dropItem(Items.BEETROOT, 1)
+        dropStack(ItemStack(Items.BEETROOT, 64))
     }
 }
