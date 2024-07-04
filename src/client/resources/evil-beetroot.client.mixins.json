@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "org.wdfeer.evil_beetroot.mixin.client",
+	"compatibilityLevel": "JAVA_17",
+	"client": [
+		"ExampleClientMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
