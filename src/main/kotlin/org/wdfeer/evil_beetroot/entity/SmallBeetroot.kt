@@ -17,9 +17,9 @@ import org.wdfeer.evil_beetroot.EvilBeetrootMod
 
 class SmallBeetroot(world: World?) : HostileEntity(TYPE, world) {
     companion object {
-        val TYPE: EntityType<SmallBeetroot> = FabricEntityTypeBuilder.create<SmallBeetroot>(
+        val TYPE: EntityType<SmallBeetroot> = FabricEntityTypeBuilder.create(
             SpawnGroup.CREATURE
-        ) { type, world -> SmallBeetroot(world) }
+        ) { _, world -> SmallBeetroot(world) }
             .dimensions(EntityDimensions.fixed(0.75f, 0.75f))
             .build()
         
@@ -27,9 +27,9 @@ class SmallBeetroot(world: World?) : HostileEntity(TYPE, world) {
 
         fun createMobAttributes(): DefaultAttributeContainer.Builder {
             return HostileEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 15.0)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.33)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3.0)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0)
         }
     }
 
