@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer
 import net.minecraft.util.Identifier
 import org.slf4j.LoggerFactory
 import org.wdfeer.evil_beetroot.entity.common.MobAttributes
+import org.wdfeer.evil_beetroot.entity.common.MobSpawnManager
 import org.wdfeer.evil_beetroot.entity.common.ModEntityTypes
 
 class EvilBeetrootMod : ModInitializer {
@@ -17,5 +18,6 @@ class EvilBeetrootMod : ModInitializer {
 	override fun onInitialize() {
 		ModEntityTypes.initialize()
 		MobAttributes.initialize()
+		MobSpawnManager.initialize()
 	}
 }
