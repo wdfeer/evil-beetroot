@@ -1,16 +1,15 @@
 package org.wdfeer.evil_beetroot.entity
 
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricEntityTypeBuilder
-import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityDimensions
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.SpawnGroup
-import net.minecraft.entity.mob.PathAwareEntity
+import net.minecraft.entity.mob.HostileEntity
 import net.minecraft.util.Identifier
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.EvilBeetrootMod
 
-class SmallBeetroot(world: World?) : PathAwareEntity(TYPE, world) {
+class SmallBeetroot(world: World?) : HostileEntity(TYPE, world) {
     companion object {
         val TYPE: EntityType<SmallBeetroot> = FabricEntityTypeBuilder.create<SmallBeetroot>(
             SpawnGroup.CREATURE
