@@ -15,6 +15,7 @@ import net.minecraft.item.Items
 import net.minecraft.util.Identifier
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.EvilBeetrootMod
+import org.wdfeer.evil_beetroot.entity.goal.LargeEntityMeleeAttackGoal
 
 class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
     companion object {
@@ -37,7 +38,7 @@ class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
 
     init {
         goalSelector.add(1, SwimGoal(this))
-        goalSelector.add(2, MeleeAttackGoal(this, 1.0, true))
+        goalSelector.add(2, LargeEntityMeleeAttackGoal(this, 1.0, true))
         goalSelector.add(3, WanderAroundGoal(this, 0.5))
         goalSelector.add(4, LookAtEntityGoal(this, PlayerEntity::class.java, 8.0f))
         goalSelector.add(5, LookAroundGoal(this))
