@@ -1,4 +1,4 @@
-package org.wdfeer.evil_beetroot
+package org.wdfeer.evil_beetroot.entity.common
 
 import net.minecraft.entity.EntityType
 import net.minecraft.registry.Registries

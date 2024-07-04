@@ -1,4 +1,4 @@
-package org.wdfeer.evil_beetroot
+package org.wdfeer.evil_beetroot.entity.common
 
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttributeRegistry
 import org.wdfeer.evil_beetroot.entity.SmallBeetroot

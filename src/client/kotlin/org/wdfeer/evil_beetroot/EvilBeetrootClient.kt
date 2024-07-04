@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
 import net.minecraft.client.render.entity.model.EntityModelLayer
 import org.wdfeer.evil_beetroot.entity.SmallBeetroot
+import org.wdfeer.evil_beetroot.entity.common.ModEntityTypes
 import org.wdfeer.evil_beetroot.model.SmallBeetrootModel
 import org.wdfeer.evil_beetroot.renderer.SmallBeetrootRenderer
 
