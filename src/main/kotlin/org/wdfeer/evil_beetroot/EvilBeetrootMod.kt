@@ -14,6 +14,6 @@ class EvilBeetrootMod : ModInitializer {
 
 	override fun onInitialize() {
 		ModEntityTypes.initialize()
-		ModMobAttributes.initialize()
+		MobAttributes.initialize()
 	}
 }

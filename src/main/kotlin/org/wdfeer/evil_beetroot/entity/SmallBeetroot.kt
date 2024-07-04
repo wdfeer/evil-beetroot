@@ -19,5 +19,4 @@ class SmallBeetroot(world: World?) : HostileEntity(TYPE, world) {
         
         fun getIdentifier(): Identifier = EvilBeetrootMod.getIdentifier("small_beetroot")
     }
-
 }
