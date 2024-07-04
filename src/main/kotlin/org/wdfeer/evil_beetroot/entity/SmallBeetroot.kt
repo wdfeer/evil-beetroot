@@ -18,7 +18,7 @@ import org.wdfeer.evil_beetroot.EvilBeetrootMod
 class SmallBeetroot(world: World?) : HostileEntity(TYPE, world) {
     companion object {
         val TYPE: EntityType<SmallBeetroot> = FabricEntityTypeBuilder.create(
-            SpawnGroup.CREATURE
+            SpawnGroup.MONSTER
         ) { _, world -> SmallBeetroot(world) }
             .dimensions(EntityDimensions.fixed(0.75f, 0.75f))
             .build()
