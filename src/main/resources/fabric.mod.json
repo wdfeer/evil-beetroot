@@ -3,15 +3,15 @@
 	"id": "evil_beetroot",
 	"version": "${version}",
 	"name": "Evil Beetroot",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "The Evil Beetroot shall hunt you down!",
 	"authors": [
-		"Me!"
+		"wdfeer"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/wdfeer/evil-beetroot",
+		"sources": "https://github.com/wdfeer/evil-beetroot"
 	},
-	"license": "CC0-1.0",
+	"license": "GPL-3.0",
 	"icon": "assets/evil_beetroot/icon.png",
 	"environment": "*",
 	"entrypoints": {
