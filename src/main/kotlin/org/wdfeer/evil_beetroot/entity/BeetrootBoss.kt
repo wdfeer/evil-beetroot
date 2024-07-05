@@ -29,8 +29,8 @@ class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
 
         fun createMobAttributes(): DefaultAttributeContainer.Builder {
             return HostileEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 100.0)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.4)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 120.0)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10.0)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 80.0)
         }
