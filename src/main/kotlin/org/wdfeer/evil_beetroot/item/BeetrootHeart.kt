@@ -13,7 +13,6 @@ import net.minecraft.util.TypedActionResult
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.item.common.Identifiable
 import java.util.*
-import kotlin.reflect.jvm.internal.impl.builtins.functions.FunctionTypeKind
 
 open class BeetrootHeart : Item(FabricItemSettings()), Identifiable {
     companion object {

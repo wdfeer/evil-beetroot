@@ -19,7 +19,7 @@ object BeetrootHeartClient {
             val text: Text = if (hasHpIncreaseModifier(player))
                 Text.translatable("tooltip.evil_beetroot.beetroot_heart_used").formatted(Formatting.GRAY)
             else
-                Text.translatable("tooltip.evil_beetroot.beetroot_heart").formatted(Formatting.RED)
+                Text.translatable("tooltip.evil_beetroot.beetroot_heart").formatted(Formatting.GREEN)
 
             tooltip.add(text)
         }
