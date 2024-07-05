@@ -19,8 +19,4 @@ object ModEntityTypes {
         BeetrootBoss.getIdentifier(),
         BeetrootBoss.TYPE
     )
-
-    fun initialize() {
-
-    }
 }

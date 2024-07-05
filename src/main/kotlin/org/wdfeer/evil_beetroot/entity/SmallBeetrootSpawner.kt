@@ -10,6 +10,7 @@ import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.random.Random
 import net.minecraft.world.World
+import org.wdfeer.evil_beetroot.config.BeetConfig
 
 object SmallBeetrootSpawner {
     fun initialize() {
@@ -22,11 +23,9 @@ object SmallBeetrootSpawner {
     }
 
     private fun afterBeetrootHarvested(world: World, pos: BlockPos){
-        if (Random.create().nextFloat() < getSmallBeetrootSpawnChance())
+        if (Random.create().nextFloat() < BeetConfig.SMALL_BEETROOT_SPAWN_CHANCE)
             summonEntity(SmallBeetroot(world) ,world, pos)
     }
-
-    private fun getSmallBeetrootSpawnChance(): Float = 0.05f
 
     private fun summonEntity(entity: Entity, world: World, pos: BlockPos) {
         entity.setPos(pos.x.toDouble(), pos.y + 0.5, pos.z.toDouble())
