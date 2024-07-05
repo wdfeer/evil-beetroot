@@ -20,7 +20,7 @@ object BeetrootBossSpawner {
     fun trigger(player: ServerPlayerEntity) {
         val server: MinecraftServer = player.server
 
-        server.sendMessage(Text.translatable("evil_beetroot.boss_triggered"))
+        server.playerManager.playerList.forEach {p -> p.sendMessage(Text.translatable("evil_beetroot.boss_triggered"))}
 
         GlobalScope.launch {
             delay(30000)
