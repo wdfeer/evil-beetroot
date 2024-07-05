@@ -9,6 +9,9 @@ import net.minecraft.stat.Stats
 import net.minecraft.text.Text
 import net.minecraft.util.Formatting
 import org.wdfeer.evil_beetroot.entity.SmallBeetroot.Companion.TYPE
+import kotlin.time.Duration
+import kotlin.time.DurationUnit
+import kotlin.time.toDuration
 
 object BeetrootBossSpawner {
     fun onSmallBeetrootKilled(killer: ServerPlayerEntity) {
@@ -17,6 +20,8 @@ object BeetrootBossSpawner {
             trigger(killer)
         }
     }
+
+    private val SUMMON_TIME: Duration = 30.toDuration(DurationUnit.SECONDS);
 
     fun trigger(player: ServerPlayerEntity) {
         val server: MinecraftServer = player.server
@@ -27,7 +32,7 @@ object BeetrootBossSpawner {
         }
 
         GlobalScope.launch {
-            delay(30000)
+            delay(SUMMON_TIME)
             summon(player)
         }
     }
