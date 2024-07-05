@@ -7,6 +7,7 @@ import net.minecraft.server.MinecraftServer
 import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.stat.Stats
 import net.minecraft.text.Text
+import net.minecraft.util.Formatting
 import org.wdfeer.evil_beetroot.entity.SmallBeetroot.Companion.TYPE
 
 object BeetrootBossSpawner {
@@ -20,7 +21,10 @@ object BeetrootBossSpawner {
     fun trigger(player: ServerPlayerEntity) {
         val server: MinecraftServer = player.server
 
-        server.playerManager.playerList.forEach {p -> p.sendMessage(Text.translatable("evil_beetroot.boss_triggered"))}
+        server.playerManager.playerList.forEach {
+            p -> p.sendMessage(Text.translatable("evil_beetroot.boss_triggered")
+                .formatted(Formatting.DARK_RED))
+        }
 
         GlobalScope.launch {
             delay(30000)
