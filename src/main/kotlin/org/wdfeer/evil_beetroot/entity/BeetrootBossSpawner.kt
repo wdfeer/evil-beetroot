@@ -33,8 +33,10 @@ object BeetrootBossSpawner {
         
         val server: MinecraftServer = player.server
 
+        val text: Text = getText().formatted(Formatting.DARK_RED)
+
         server.playerManager.playerList.forEach {
-            p -> p.sendMessage(getText().formatted(Formatting.DARK_RED))
+            p -> p.sendMessage(text)
         }
 
         GlobalScope.launch {
