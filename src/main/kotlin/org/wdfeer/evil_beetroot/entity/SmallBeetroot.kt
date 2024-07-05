@@ -15,6 +15,8 @@ import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.util.Identifier
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.EvilBeetrootMod
+import org.wdfeer.evil_beetroot.config.BeetConfig
+import org.wdfeer.evil_beetroot.item.ModItems
 
 class SmallBeetroot(world: World?) : HostileEntity(TYPE, world) {
     companion object {
@@ -47,7 +49,10 @@ class SmallBeetroot(world: World?) : HostileEntity(TYPE, world) {
     override fun dropLoot(damageSource: DamageSource?, causedByPlayer: Boolean) {
         super.dropLoot(damageSource, causedByPlayer)
 
-        dropItem(Items.BEETROOT, 1)
+        if (random.nextFloat() < BeetConfig.SMALL_BEETROOT_SENTIENT_DROP_CHANCE)
+            dropItem(ModItems.SENTIENT_BEETROOT, 1)
+        else
+            dropItem(Items.BEETROOT, 1)
     }
 
     override fun onDeath(damageSource: DamageSource?) {
