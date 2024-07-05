@@ -4,7 +4,6 @@ import net.minecraft.client.model.*
 import net.minecraft.client.render.VertexConsumer
 import net.minecraft.client.render.entity.model.EntityModel
 import net.minecraft.client.util.math.MatrixStack
-import org.wdfeer.evil_beetroot.ModelRotationHelper
 import org.wdfeer.evil_beetroot.entity.SmallBeetroot
 
 // Made with Blockbench 4.10.3

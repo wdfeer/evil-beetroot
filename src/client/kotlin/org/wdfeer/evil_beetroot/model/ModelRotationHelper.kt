@@ -1,4 +1,4 @@
-package org.wdfeer.evil_beetroot
+package org.wdfeer.evil_beetroot.model
 
 import net.minecraft.client.model.ModelPart
 import kotlin.math.PI
