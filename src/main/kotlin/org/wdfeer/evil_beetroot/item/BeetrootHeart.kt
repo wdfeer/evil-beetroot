@@ -60,7 +60,7 @@ class BeetrootHeart : Item(FabricItemSettings()), Identifiable {
         tooltip: MutableList<Text>?,
         context: TooltipContext?
     ) {
-        if (tooltip != null) {;
+        if (tooltip != null) {
             val text: Text = if (hasHpIncreaseModifier(MinecraftClient.getInstance().player))
                 Text.translatable("tooltip.evil_beetroot.beetroot_heart_used").formatted(Formatting.GRAY)
             else
