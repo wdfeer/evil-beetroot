@@ -5,5 +5,6 @@
   "evil_beetroot.boss_triggered1": "You feel an ominous presence upon you.",
   "evil_beetroot.boss_triggered2": "Your actions have consequences.",
 
-  "item.evil_beetroot.sentient_beetroot": "Sentient Beetroot"
+  "item.evil_beetroot.sentient_beetroot": "Sentient Beetroot",
+  "item.evil_beetroot.beetroot_heart": "Beetroot Heart"
 }
