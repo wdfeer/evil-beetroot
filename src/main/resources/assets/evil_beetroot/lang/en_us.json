@@ -2,7 +2,8 @@
   "entity.evil_beetroot.small_beetroot": "Small Beetroot",
   "entity.evil_beetroot.beetroot_boss": "Beetroot Boss",
 
-  "evil_beetroot.boss_triggered": "You feel an ominous presence upon you.",
+  "evil_beetroot.boss_triggered1": "You feel an ominous presence upon you.",
+  "evil_beetroot.boss_triggered2": "Your actions have consequences.",
 
   "item.evil_beetroot.sentient_beetroot": "Sentient Beetroot"
 }
