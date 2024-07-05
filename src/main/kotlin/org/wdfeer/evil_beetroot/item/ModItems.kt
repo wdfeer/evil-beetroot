@@ -7,11 +7,14 @@ import org.wdfeer.evil_beetroot.item.common.Identifiable
 
 object ModItems {
     val SENTIENT_BEETROOT = SentientBeetroot()
-    private val items: Array<Item> = arrayOf(
-        SENTIENT_BEETROOT
-    )
+    val BEETROOT_HEART = BeetrootHeart()
 
     fun initialize() {
+        val items: Array<Item> = arrayOf(
+            SENTIENT_BEETROOT,
+            BEETROOT_HEART
+        )
+
         for (i in items) {
             Registry.register(Registries.ITEM, (i as Identifiable).getIdentifier(), i)
         }

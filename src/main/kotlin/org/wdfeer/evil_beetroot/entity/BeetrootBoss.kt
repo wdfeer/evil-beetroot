@@ -59,5 +59,8 @@ class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
         for (i in 1..4) {
             dropStack(ItemStack(Items.BEETROOT, 8 - sentients / 2))
         }
+
+        if (random.nextBoolean())
+            dropItem(ModItems.BEETROOT_HEART)
     }
 }
