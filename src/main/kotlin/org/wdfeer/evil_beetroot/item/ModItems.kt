@@ -13,7 +13,8 @@ object ModItems {
         val items: Array<Item> = arrayOf(
             SENTIENT_BEETROOT,
             BEETROOT_HEART,
-            BeetrootDagger()
+            BeetrootDagger(),
+            BeetrootClaymore()
         )
 
         for (i in items) {
