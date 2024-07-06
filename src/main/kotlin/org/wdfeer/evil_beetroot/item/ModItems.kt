@@ -12,7 +12,8 @@ object ModItems {
     fun initialize() {
         val items: Array<Item> = arrayOf(
             SENTIENT_BEETROOT,
-            BEETROOT_HEART
+            BEETROOT_HEART,
+            BeetrootDagger()
         )
 
         for (i in items) {
