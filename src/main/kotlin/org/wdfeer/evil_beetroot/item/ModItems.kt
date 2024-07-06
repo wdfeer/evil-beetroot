@@ -18,5 +18,7 @@ object ModItems {
         for (i in items) {
             Registry.register(Registries.ITEM, (i as Identifiable).getIdentifier(), i)
         }
+
+        BeetrootHeart.initialize()
     }
 }
