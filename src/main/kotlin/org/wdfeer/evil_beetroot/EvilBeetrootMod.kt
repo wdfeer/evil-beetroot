@@ -3,6 +3,7 @@ package org.wdfeer.evil_beetroot
 import net.fabricmc.api.ModInitializer
 import net.minecraft.util.Identifier
 import org.slf4j.LoggerFactory
+import org.wdfeer.evil_beetroot.entity.BeetrootBossSpawner
 import org.wdfeer.evil_beetroot.entity.common.MobAttributes
 import org.wdfeer.evil_beetroot.entity.SmallBeetrootSpawner
 import org.wdfeer.evil_beetroot.entity.common.ModEntityTypes
@@ -21,6 +22,7 @@ object EvilBeetrootMod : ModInitializer {
 		ModEntityTypes.initialize()
 		MobAttributes.initialize()
 		SmallBeetrootSpawner.initialize()
+		BeetrootBossSpawner.initialize()
 
 		LOGGER.info("Evil Beetroot initialized!")
 	}
