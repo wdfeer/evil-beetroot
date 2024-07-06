@@ -8,6 +8,7 @@
   "item.evil_beetroot.sentient_beetroot": "Sentient Beetroot",
   "item.evil_beetroot.beetroot_heart": "Beetroot Heart",
   "item.evil_beetroot.beetroot_dagger": "Beetroot Dagger",
+  "item.evil_beetroot.beetroot_claymore": "Beetroot Claymore",
 
   "tooltip.evil_beetroot.beetroot_heart": "Right Click to gain +2 Max Health permanently",
   "tooltip.evil_beetroot.beetroot_heart_used": "Beetroot Heart has already been applied",
