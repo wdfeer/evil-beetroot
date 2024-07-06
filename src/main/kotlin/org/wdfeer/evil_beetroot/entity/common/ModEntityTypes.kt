@@ -8,15 +8,21 @@ import org.wdfeer.evil_beetroot.entity.SmallBeetroot
 
 
 object ModEntityTypes {
-    val SMALL_BEETROOT: EntityType<SmallBeetroot> = Registry.register(
-        Registries.ENTITY_TYPE,
-        SmallBeetroot.getIdentifier(),
-        SmallBeetroot.TYPE
-    )
+    lateinit var smallBeetroot: EntityType<SmallBeetroot>
 
-    val BEETROOT_BOSS: EntityType<BeetrootBoss> = Registry.register(
-        Registries.ENTITY_TYPE,
-        BeetrootBoss.getIdentifier(),
-        BeetrootBoss.TYPE
-    )
+    lateinit var beetrootBoss: EntityType<BeetrootBoss>
+
+    fun initialize() {
+        smallBeetroot = Registry.register(
+            Registries.ENTITY_TYPE,
+            SmallBeetroot.getIdentifier(),
+            SmallBeetroot.TYPE
+        )
+
+        beetrootBoss = Registry.register(
+            Registries.ENTITY_TYPE,
+            BeetrootBoss.getIdentifier(),
+            BeetrootBoss.TYPE
+        )
+    }
 }
