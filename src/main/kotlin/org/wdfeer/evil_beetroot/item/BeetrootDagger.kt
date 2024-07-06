@@ -4,14 +4,11 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.client.item.TooltipContext
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.damage.DamageSource
-import net.minecraft.entity.damage.DamageType
 import net.minecraft.entity.damage.DamageTypes
 import net.minecraft.item.ItemStack
 import net.minecraft.item.SwordItem
 import net.minecraft.item.ToolMaterials
-import net.minecraft.registry.Registries
 import net.minecraft.registry.RegistryKeys
-import net.minecraft.registry.entry.RegistryEntry
 import net.minecraft.text.Text
 import net.minecraft.util.Formatting
 import net.minecraft.world.World
@@ -26,15 +23,14 @@ class BeetrootDagger : SwordItem(ToolMaterials.DIAMOND, 0, 2f - 4f, FabricItemSe
 
     override fun postHit(stack: ItemStack?, target: LivingEntity?, attacker: LivingEntity?): Boolean {
         if (target != null && attacker != null) {
-            val damageTypeRegistry = Registries.REGISTRIES.get(RegistryKeys.DAMAGE_TYPE.value)
-            val damageTypeEntry = (damageTypeRegistry?.get(DamageTypes.MAGIC.value) as? RegistryEntry<DamageType>)
+            val damageSource = DamageSource(
+                attacker.world
+                    .registryManager
+                    .get(RegistryKeys.DAMAGE_TYPE)
+                    .entryOf(DamageTypes.GENERIC))
 
-            if (damageTypeEntry != null) {
-                val customDamageSource = DamageSource(damageTypeEntry)
-
-                target.damage(customDamageSource, DRAIN)
-                attacker.heal(DRAIN)
-            }
+            target.damage(damageSource, DRAIN)
+            attacker.heal(DRAIN)
         }
 
         return super.postHit(stack, target, attacker)
