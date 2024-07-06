@@ -11,5 +11,5 @@
 
   "tooltip.evil_beetroot.beetroot_heart": "Right Click to gain +2 Max Health permanently",
   "tooltip.evil_beetroot.beetroot_heart_used": "Beetroot Heart has already been applied",
-  "tooltip.evil_beetroot.beetroot_dagger": "On hit: Heal yourself by 1"
+  "tooltip.evil_beetroot.heal_on_hit": "On hit: Heal yourself by 1"
 }
