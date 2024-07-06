@@ -19,7 +19,7 @@ import java.util.*
 
 open class BeetrootHeart : Item(FabricItemSettings()), Identifiable {
     companion object {
-        val MAX_HP_MODIFIER_UUID: UUID = UUID.nameUUIDFromBytes("beetroot_heart_max_hp_increase".toByteArray())
+        private val MAX_HP_MODIFIER_UUID: UUID = UUID.nameUUIDFromBytes("beetroot_heart_max_hp_increase".toByteArray())
 
         fun initialize() {
             ServerPlayerEvents.COPY_FROM.register { old, new, _ -> afterRespawn(old, new) }
@@ -34,10 +34,6 @@ open class BeetrootHeart : Item(FabricItemSettings()), Identifiable {
         fun hasHpIncreaseModifier(player: PlayerEntity?): Boolean {
             val attributeInstance = player?.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH)
             return attributeInstance?.getModifier(MAX_HP_MODIFIER_UUID) != null
-        }
-
-        private fun hasUsedHeart(player: ServerPlayerEntity): Boolean {
-            return player.statHandler.getStat(Stats.USED.getOrCreateStat(ModItems.BEETROOT_HEART)) > 0
         }
 
         private fun applyHealthModifier(player: PlayerEntity) {
