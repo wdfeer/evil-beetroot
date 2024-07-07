@@ -14,7 +14,8 @@ object ModItems {
             SENTIENT_BEETROOT,
             BEETROOT_HEART,
             BeetrootDagger(),
-            BeetrootClaymore()
+            BeetrootClaymore(),
+            BeetrootPickaxe()
         )
 
         for (i in items) {

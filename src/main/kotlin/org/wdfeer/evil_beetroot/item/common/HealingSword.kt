@@ -1,4 +1,4 @@
-package org.wdfeer.evil_beetroot.item
+package org.wdfeer.evil_beetroot.item.common
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.client.item.TooltipContext

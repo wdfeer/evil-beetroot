@@ -1,5 +1,6 @@
 package org.wdfeer.evil_beetroot.item
 
+import org.wdfeer.evil_beetroot.item.common.HealingSword
 import org.wdfeer.evil_beetroot.item.common.Identifiable
 
 class BeetrootDagger : HealingSword(0, 2.5f), Identifiable {
