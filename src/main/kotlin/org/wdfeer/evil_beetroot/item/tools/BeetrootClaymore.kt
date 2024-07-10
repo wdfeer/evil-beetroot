@@ -1,4 +1,4 @@
-package org.wdfeer.evil_beetroot.item
+package org.wdfeer.evil_beetroot.item.tools
 
 import org.wdfeer.evil_beetroot.item.common.HealingSword
 import org.wdfeer.evil_beetroot.item.common.Identifiable

@@ -4,7 +4,8 @@ import net.minecraft.client.MinecraftClient
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.text.Text
 import net.minecraft.util.Formatting
-import org.wdfeer.evil_beetroot.item.BeetrootHeart.Companion.hasHpIncreaseModifier
+import org.wdfeer.evil_beetroot.item.other.BeetrootHeart
+import org.wdfeer.evil_beetroot.item.other.BeetrootHeart.Companion.hasHpIncreaseModifier
 
 object BeetrootHeartClient {
     fun initialize() {
