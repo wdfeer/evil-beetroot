@@ -22,6 +22,7 @@ object ModItems {
             BeetrootDiamond(),
             BeetrootDagger(),
             BeetrootClaymore(),
+            BeetrootRapier(),
             BeetrootPickaxe(),
             BeetrootAxe(),
             BeetrootShovel(),
