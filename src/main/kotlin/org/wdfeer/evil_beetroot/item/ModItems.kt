@@ -9,9 +9,9 @@ import org.wdfeer.evil_beetroot.item.common.Identifiable
 import org.wdfeer.evil_beetroot.item.other.BeetrootDiamond
 import org.wdfeer.evil_beetroot.item.other.BeetrootHeart
 import org.wdfeer.evil_beetroot.item.other.SentientBeetroot
-import org.wdfeer.evil_beetroot.item.tools.BeetrootClaymore
-import org.wdfeer.evil_beetroot.item.tools.BeetrootDagger
-import org.wdfeer.evil_beetroot.item.tools.BeetrootPickaxe
+import org.wdfeer.evil_beetroot.item.tool.BeetrootClaymore
+import org.wdfeer.evil_beetroot.item.tool.BeetrootDagger
+import org.wdfeer.evil_beetroot.item.tool.BeetrootPickaxe
 
 object ModItems {
     val SENTIENT_BEETROOT = SentientBeetroot()
