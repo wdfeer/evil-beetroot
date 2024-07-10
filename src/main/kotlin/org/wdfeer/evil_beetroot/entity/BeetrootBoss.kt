@@ -17,6 +17,8 @@ import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.EvilBeetrootMod
 import org.wdfeer.evil_beetroot.entity.goal.LargeEntityMeleeAttackGoal
 import org.wdfeer.evil_beetroot.item.ModItems
+import kotlin.random.Random
+import kotlin.random.nextInt
 
 class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
     companion object {
@@ -52,12 +54,11 @@ class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
     override fun dropLoot(damageSource: DamageSource?, causedByPlayer: Boolean) {
         super.dropLoot(damageSource, causedByPlayer)
 
-        val sentients: Int = random.nextBetween(1, 6)
-
-        dropStack(ItemStack(ModItems.SENTIENT_BEETROOT, sentients))
+        if (Random.nextBoolean())
+            dropStack(ItemStack(ModItems.SENTIENT_BEETROOT))
 
         for (i in 1..4) {
-            dropStack(ItemStack(Items.BEETROOT, 8 - sentients / 2))
+            dropStack(ItemStack(Items.BEETROOT, Random.nextInt(1..6)))
         }
 
         if (random.nextBoolean())
