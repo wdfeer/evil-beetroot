@@ -46,7 +46,7 @@ class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
         goalSelector.add(4, LookAtEntityGoal(this, PlayerEntity::class.java, 8.0f))
         goalSelector.add(5, LookAroundGoal(this))
 
-        targetSelector.add(1, ActiveTargetGoal(this, PlayerEntity::class.java, true))
+        targetSelector.add(1, ActiveTargetGoal(this, PlayerEntity::class.java, false))
 
         experiencePoints *= 15
     }
