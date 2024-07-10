@@ -6,6 +6,7 @@ import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import org.wdfeer.evil_beetroot.item.common.Groupable
 import org.wdfeer.evil_beetroot.item.common.Identifiable
+import org.wdfeer.evil_beetroot.item.other.BeetrootDiamond
 import org.wdfeer.evil_beetroot.item.other.BeetrootHeart
 import org.wdfeer.evil_beetroot.item.other.SentientBeetroot
 import org.wdfeer.evil_beetroot.item.tools.BeetrootClaymore
@@ -20,9 +21,10 @@ object ModItems {
         val items: Array<Item> = arrayOf(
             SENTIENT_BEETROOT,
             BEETROOT_HEART,
+            BeetrootDiamond(),
             BeetrootDagger(),
             BeetrootClaymore(),
-            BeetrootPickaxe()
+            BeetrootPickaxe(),
         )
 
         for (i in items) {

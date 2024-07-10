@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "evil_beetroot:sentient_beetroot"
+    },
+    {
+      "item": "evil_beetroot:beetroot_heart"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "evil_beetroot:beetroot_diamond"
+  }
+}

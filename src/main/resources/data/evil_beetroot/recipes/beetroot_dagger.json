@@ -5,16 +5,12 @@
     "#": {
       "item": "minecraft:stick"
     },
-    "X": {
-      "item": "minecraft:diamond"
-    },
     "B": {
-      "item": "evil_beetroot:beetroot_heart"
+      "item": "evil_beetroot:beetroot_diamond"
     }
   },
   "pattern": [
     "B",
-    "X",
     "#"
   ],
   "result": {
