@@ -10,7 +10,6 @@ import net.minecraft.text.Text
 import net.minecraft.util.Formatting
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Vec3d
-import net.minecraft.util.math.random.Random
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.config.BeetConfig
 import org.wdfeer.evil_beetroot.entity.SmallBeetroot.Companion.TYPE
@@ -18,6 +17,7 @@ import org.wdfeer.evil_beetroot.util.nextSign
 import org.wdfeer.evil_beetroot.util.toVec3d
 import org.wdfeer.evil_beetroot.util.toVec3i
 import kotlin.math.max
+import kotlin.random.Random
 
 object BeetrootBossSpawner {
     fun initialize() {
@@ -33,7 +33,7 @@ object BeetrootBossSpawner {
 
     fun trigger(player: ServerPlayerEntity) {
         fun getText(): MutableText {
-            return (if (Random.createLocal().nextBoolean())
+            return (if (Random.nextBoolean())
                 Text.translatable("evil_beetroot.boss_triggered1")
             else
                 Text.translatable("evil_beetroot.boss_triggered2")).formatted(Formatting.DARK_RED)
@@ -74,11 +74,10 @@ object BeetrootBossSpawner {
     private const val SPAWN_TRIES: Int = 16
 
     private fun getRandomSpawnPosition(origin: Vec3d, world: World): Vec3d {
-        val random: Random = Random.createLocal()
         for (i in 1..SPAWN_TRIES){
-            val x = origin.x + (random.nextInt(SPAWN_DISTANCE) + SPAWN_DISTANCE) * random.nextSign()
-            val y = origin.y + random.nextInt(max(SPAWN_DISTANCE - i, 0)) * random.nextSign()
-            val z = origin.z + (random.nextInt(SPAWN_DISTANCE) + SPAWN_DISTANCE) * random.nextSign()
+            val x = origin.x + (Random.nextInt(SPAWN_DISTANCE) + SPAWN_DISTANCE) * Random.nextSign()
+            val y = origin.y + Random.nextInt(max(SPAWN_DISTANCE - i, 1)) * Random.nextSign()
+            val z = origin.z + (Random.nextInt(SPAWN_DISTANCE) + SPAWN_DISTANCE) * Random.nextSign()
 
             val pos = Vec3d(x,y,z).toVec3i()
             if (canSpawnAt(world, BlockPos(pos)))
