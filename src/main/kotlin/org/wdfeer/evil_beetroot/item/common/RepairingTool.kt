@@ -11,10 +11,10 @@ import org.wdfeer.evil_beetroot.config.BeetConfig
 
 object RepairingTool {
     fun inventoryTick(tool: ItemStack?, world: World?, entity: Entity?) {
-        // Do repair checks every 10 ticks
-        if (world == null || (world.time % 10).toInt() != 0) return
-
-        if (entity !is ServerPlayerEntity || tool == null || tool.damage < BeetConfig.REPAIR_PER_BEETROOT) return
+        if (world == null ||
+            entity !is ServerPlayerEntity ||
+            tool == null ||
+            tool.damage < BeetConfig.REPAIR_PER_BEETROOT) return
 
         val player: ServerPlayerEntity = entity
         for (i in 0 until player.inventory.size()){
