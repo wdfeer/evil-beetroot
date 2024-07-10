@@ -3,6 +3,7 @@ package org.wdfeer.evil_beetroot.item.tool
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.block.BlockState
 import net.minecraft.client.item.TooltipContext
+import net.minecraft.entity.Entity
 import net.minecraft.entity.LivingEntity
 import net.minecraft.item.*
 import net.minecraft.registry.RegistryKey
@@ -12,6 +13,7 @@ import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.item.common.FeedingTool
 import org.wdfeer.evil_beetroot.item.common.Groupable
 import org.wdfeer.evil_beetroot.item.common.Identifiable
+import org.wdfeer.evil_beetroot.item.common.RepairingTool
 
 class BeetrootPickaxe : PickaxeItem(ToolMaterials.DIAMOND, 1, 1.2f - 4f, FabricItemSettings()), Identifiable, Groupable {
     override fun getItemGroup(): RegistryKey<ItemGroup> = ItemGroups.TOOLS
@@ -35,8 +37,14 @@ class BeetrootPickaxe : PickaxeItem(ToolMaterials.DIAMOND, 1, 1.2f - 4f, FabricI
         tooltip: MutableList<Text>?,
         context: TooltipContext?
     ) {
+        RepairingTool.appendTooltip(tooltip)
         FeedingTool.appendTooltip(tooltip)
 
         super.appendTooltip(stack, world, tooltip, context)
+    }
+
+    override fun inventoryTick(stack: ItemStack?, world: World?, entity: Entity?, slot: Int, selected: Boolean) {
+        RepairingTool.inventoryTick(stack, world, entity)
+        super.inventoryTick(stack, world, entity, slot, selected)
     }
 }

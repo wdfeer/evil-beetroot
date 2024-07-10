@@ -16,4 +16,5 @@ object BeetConfig { // TODO: Make this an actual Config
 
     const val SWORDS_HEAL: Float = 1f
     const val TOOLS_FEED_CHANCE: Float = 0.1f
+    const val REPAIR_PER_BEETROOT: Int = 10
 }

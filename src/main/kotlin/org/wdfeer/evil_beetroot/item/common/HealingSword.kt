@@ -2,6 +2,7 @@ package org.wdfeer.evil_beetroot.item.common
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.client.item.TooltipContext
+import net.minecraft.entity.Entity
 import net.minecraft.entity.LivingEntity
 import net.minecraft.item.*
 import net.minecraft.registry.RegistryKey
@@ -27,7 +28,13 @@ abstract class HealingSword(damage: Int, speed: Float) : SwordItem(ToolMaterials
         tooltip: MutableList<Text>?,
         context: TooltipContext?
     ) {
+        RepairingTool.appendTooltip(tooltip)
         tooltip?.add(Text.translatable("tooltip.evil_beetroot.heal_on_hit").formatted(Formatting.DARK_RED))
         super.appendTooltip(stack, world, tooltip, context)
+    }
+
+    override fun inventoryTick(stack: ItemStack?, world: World?, entity: Entity?, slot: Int, selected: Boolean) {
+        RepairingTool.inventoryTick(stack, world, entity)
+        super.inventoryTick(stack, world, entity, slot, selected)
     }
 }

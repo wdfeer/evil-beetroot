@@ -16,7 +16,7 @@ object FeedingTool {
         }
     }
 
-    fun appendTooltip(tooltip: MutableList<Text>?, ) {
+    fun appendTooltip(tooltip: MutableList<Text>?) {
         tooltip?.add(Text.translatable("tooltip.evil_beetroot.feed_on_mine").formatted(Formatting.DARK_RED))
     }
 }
