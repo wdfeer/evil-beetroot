@@ -10,12 +10,12 @@
     }
   },
   "pattern": [
-    "BBB",
-    " # ",
-    " # "
+    "B",
+    "#",
+    "#"
   ],
   "result": {
-    "item": "evil_beetroot:beetroot_pickaxe"
+    "item": "evil_beetroot:beetroot_shovel"
   },
   "show_notification": true
 }

@@ -12,6 +12,7 @@ import org.wdfeer.evil_beetroot.item.other.SentientBeetroot
 import org.wdfeer.evil_beetroot.item.tool.BeetrootClaymore
 import org.wdfeer.evil_beetroot.item.tool.BeetrootDagger
 import org.wdfeer.evil_beetroot.item.tool.BeetrootPickaxe
+import org.wdfeer.evil_beetroot.item.tool.BeetrootShovel
 
 object ModItems {
     val SENTIENT_BEETROOT = SentientBeetroot()
@@ -25,6 +26,7 @@ object ModItems {
             BeetrootDagger(),
             BeetrootClaymore(),
             BeetrootPickaxe(),
+            BeetrootShovel()
         )
 
         for (i in items) {

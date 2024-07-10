@@ -13,9 +13,9 @@ import org.wdfeer.evil_beetroot.item.common.FeedingTool
 import org.wdfeer.evil_beetroot.item.common.Groupable
 import org.wdfeer.evil_beetroot.item.common.Identifiable
 
-class BeetrootPickaxe : PickaxeItem(ToolMaterials.DIAMOND, 1, 1.2f - 4f, FabricItemSettings()), Identifiable, Groupable {
+class BeetrootShovel : ShovelItem(ToolMaterials.DIAMOND, 1.5f, 1f - 4f, FabricItemSettings()), Identifiable, Groupable {
     override fun getItemGroup(): RegistryKey<ItemGroup> = ItemGroups.TOOLS
-    override fun getItemName(): String = "beetroot_pickaxe"
+    override fun getItemName(): String = "beetroot_shovel"
 
     override fun postMine(
         stack: ItemStack?,
