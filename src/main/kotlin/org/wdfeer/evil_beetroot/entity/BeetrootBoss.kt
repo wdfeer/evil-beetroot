@@ -32,9 +32,9 @@ class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
 
         fun createMobAttributes(): DefaultAttributeContainer.Builder {
             return HostileEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 120.0)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 150.0)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10.0)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 8.0)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 80.0)
         }
     }
@@ -48,7 +48,7 @@ class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
 
         targetSelector.add(1, ActiveTargetGoal(this, PlayerEntity::class.java, true))
 
-        experiencePoints *= 10
+        experiencePoints *= 15
     }
 
     override fun dropLoot(damageSource: DamageSource?, causedByPlayer: Boolean) {
