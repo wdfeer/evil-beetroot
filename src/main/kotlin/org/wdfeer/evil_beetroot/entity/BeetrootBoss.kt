@@ -15,8 +15,10 @@ import net.minecraft.item.Items
 import net.minecraft.util.Identifier
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.EvilBeetrootMod
+import org.wdfeer.evil_beetroot.config.BeetConfig
 import org.wdfeer.evil_beetroot.entity.goal.LargeEntityMeleeAttackGoal
 import org.wdfeer.evil_beetroot.item.ModItems
+import org.wdfeer.evil_beetroot.util.roll
 import kotlin.random.Random
 import kotlin.random.nextInt
 
@@ -58,10 +60,10 @@ class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
             dropStack(ItemStack(Items.BEETROOT, Random.nextInt(1..6)))
         }
 
-        if (causedByPlayer && random.nextBoolean())
+        if (causedByPlayer && random.roll(BeetConfig.BOSS_SENTIENT_DROP_CHANCE))
             dropStack(ItemStack(ModItems.SENTIENT_BEETROOT))
 
-        if (causedByPlayer && random.nextBoolean())
+        if (causedByPlayer && random.roll(BeetConfig.BOSS_HEART_DROP_CHANCE))
             dropItem(ModItems.BEETROOT_HEART)
     }
 }
