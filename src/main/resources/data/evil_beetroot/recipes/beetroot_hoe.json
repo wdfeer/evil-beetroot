@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "B": {
+      "item": "evil_beetroot:beetroot_diamond"
+    }
+  },
+  "pattern": [
+    "BB",
+    " #",
+    " #"
+  ],
+  "result": {
+    "item": "evil_beetroot:beetroot_hoe"
+  },
+  "show_notification": true
+}
