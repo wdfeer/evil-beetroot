@@ -31,7 +31,7 @@ class BeetrootPickaxe : PickaxeItem(ToolMaterials.DIAMOND, 1, 1.2f - 4f, FabricI
         miner: LivingEntity?
     ): Boolean {
         if (miner is PlayerEntity && Random.createLocal().nextFloat() < FEED_CHANCE){
-            miner.hungerManager.add(1, 0f)
+            miner.hungerManager.add(1, 1f)
         }
         return super.postMine(stack, world, state, pos, miner)
     }
