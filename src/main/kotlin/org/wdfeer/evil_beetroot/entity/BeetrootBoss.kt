@@ -54,14 +54,14 @@ class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
     override fun dropLoot(damageSource: DamageSource?, causedByPlayer: Boolean) {
         super.dropLoot(damageSource, causedByPlayer)
 
-        if (Random.nextBoolean())
-            dropStack(ItemStack(ModItems.SENTIENT_BEETROOT))
-
         for (i in 1..4) {
             dropStack(ItemStack(Items.BEETROOT, Random.nextInt(1..6)))
         }
 
-        if (random.nextBoolean())
+        if (causedByPlayer && random.nextBoolean())
+            dropStack(ItemStack(ModItems.SENTIENT_BEETROOT))
+
+        if (causedByPlayer && random.nextBoolean())
             dropItem(ModItems.BEETROOT_HEART)
     }
 }
