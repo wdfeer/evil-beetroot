@@ -15,6 +15,10 @@
   "item.evil_beetroot.beetroot_axe": "Beetroot Axe",
   "item.evil_beetroot.beetroot_shovel": "Beetroot Shovel",
   "item.evil_beetroot.beetroot_hoe": "Beetroot Hoe",
+  "item.evil_beetroot.beetroot_helmet": "Beetroot Helmet",
+  "item.evil_beetroot.beetroot_chestplate": "Beetroot Chestplate",
+  "item.evil_beetroot.beetroot_leggings": "Beetroot Leggings",
+  "item.evil_beetroot.beetroot_boots": "Beetroot Boots",
 
   "tooltip.evil_beetroot.beetroot_heart": "Right Click to gain +2 Max Health permanently",
   "tooltip.evil_beetroot.beetroot_heart_used": "Beetroot Heart has already been applied",
