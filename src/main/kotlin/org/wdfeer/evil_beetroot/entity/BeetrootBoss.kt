@@ -1,9 +1,6 @@
 package org.wdfeer.evil_beetroot.entity
 
-import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricEntityTypeBuilder
-import net.minecraft.entity.EntityDimensions
 import net.minecraft.entity.EntityType
-import net.minecraft.entity.SpawnGroup
 import net.minecraft.entity.ai.goal.*
 import net.minecraft.entity.attribute.DefaultAttributeContainer
 import net.minecraft.entity.attribute.EntityAttributes
@@ -16,6 +13,7 @@ import net.minecraft.util.Identifier
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.EvilBeetrootMod
 import org.wdfeer.evil_beetroot.config.BeetConfig
+import org.wdfeer.evil_beetroot.entity.common.MonsterTypeBuilder
 import org.wdfeer.evil_beetroot.entity.goal.LargeEntityMeleeAttackGoal
 import org.wdfeer.evil_beetroot.item.ModItems
 import org.wdfeer.evil_beetroot.util.roll
@@ -24,12 +22,8 @@ import kotlin.random.nextInt
 
 class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
     companion object {
-        val TYPE: EntityType<BeetrootBoss> = FabricEntityTypeBuilder.create(
-            SpawnGroup.MISC
-        ) { _, world -> BeetrootBoss(world) }
-            .dimensions(EntityDimensions.fixed(3.5f, 3.5f))
-            .build()
-        
+        val TYPE: EntityType<BeetrootBoss> = MonsterTypeBuilder.build(3.5f, 3.5f, ::BeetrootBoss)
+
         fun getIdentifier(): Identifier = EvilBeetrootMod.getIdentifier("beetroot_boss")
 
         fun createMobAttributes(): DefaultAttributeContainer.Builder {

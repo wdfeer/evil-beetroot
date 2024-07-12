@@ -1,9 +1,6 @@
 package org.wdfeer.evil_beetroot.entity
 
-import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricEntityTypeBuilder
-import net.minecraft.entity.EntityDimensions
 import net.minecraft.entity.EntityType
-import net.minecraft.entity.SpawnGroup
 import net.minecraft.entity.ai.goal.*
 import net.minecraft.entity.attribute.DefaultAttributeContainer
 import net.minecraft.entity.attribute.EntityAttributes
@@ -16,16 +13,13 @@ import net.minecraft.util.Identifier
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.EvilBeetrootMod
 import org.wdfeer.evil_beetroot.config.BeetConfig
+import org.wdfeer.evil_beetroot.entity.common.MonsterTypeBuilder
 import org.wdfeer.evil_beetroot.item.ModItems
 
 class SmallBeetroot(world: World?) : HostileEntity(TYPE, world) {
     companion object {
-        val TYPE: EntityType<SmallBeetroot> = FabricEntityTypeBuilder.create(
-            SpawnGroup.MONSTER
-        ) { _, world -> SmallBeetroot(world) }
-            .dimensions(EntityDimensions.fixed(0.75f, 0.75f))
-            .build()
-        
+        val TYPE: EntityType<SmallBeetroot> = MonsterTypeBuilder.build(0.75f, 0.75f, ::SmallBeetroot)
+
         fun getIdentifier(): Identifier = EvilBeetrootMod.getIdentifier("small_beetroot")
 
         fun createMobAttributes(): DefaultAttributeContainer.Builder {
