@@ -14,6 +14,7 @@ import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.EvilBeetrootMod
 import org.wdfeer.evil_beetroot.config.BeetConfig
 import org.wdfeer.evil_beetroot.entity.common.MonsterTypeBuilder
+import org.wdfeer.evil_beetroot.entity.spawn.BeetrootBossSpawner
 import org.wdfeer.evil_beetroot.item.ModItems
 
 class SmallBeetroot(world: World?) : HostileEntity(TYPE, world) {

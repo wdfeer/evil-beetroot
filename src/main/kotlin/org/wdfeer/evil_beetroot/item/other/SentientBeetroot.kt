@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack
 import net.minecraft.registry.RegistryKey
 import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.world.World
-import org.wdfeer.evil_beetroot.entity.BeetrootBossSpawner
+import org.wdfeer.evil_beetroot.entity.spawn.BeetrootBossSpawner
 import org.wdfeer.evil_beetroot.item.common.Groupable
 import org.wdfeer.evil_beetroot.item.common.Identifiable
 

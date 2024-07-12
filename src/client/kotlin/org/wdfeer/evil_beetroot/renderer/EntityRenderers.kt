@@ -6,6 +6,7 @@ import org.wdfeer.evil_beetroot.entity.common.ModEntityTypes
 object EntityRenderers {
     fun initialize() {
         EntityRendererRegistry.register(ModEntityTypes.smallBeetroot) { context -> SmallBeetrootRenderer(context) }
+        EntityRendererRegistry.register(ModEntityTypes.beetrootPhantom) { context -> BeetrootPhantomRenderer(context) }
         EntityRendererRegistry.register(ModEntityTypes.beetrootBoss) { context -> BeetrootBossRenderer(context) }
     }
 }

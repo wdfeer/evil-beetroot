@@ -8,13 +8,13 @@ import net.minecraft.entity.SpawnGroup
 import net.minecraft.world.World
 
 object MonsterTypeBuilder {
-    private fun <T : Entity> build(dimensions: EntityDimensions, factory: (world: World) -> T): EntityType<T>{
+    fun <T : Entity> build(dimensions: EntityDimensions, factory: (world: World) -> T): EntityType<T> {
         return FabricEntityTypeBuilder.create(SpawnGroup.MONSTER) {
             _, world -> factory(world)
         }.dimensions(dimensions).build()
     }
 
-    fun <T : Entity> build(fixedWidth: Float, fixedHeight: Float, factory: (world: World) -> T): EntityType<T>{
+    fun <T : Entity> build(fixedWidth: Float, fixedHeight: Float, factory: (world: World) -> T): EntityType<T> {
         return build(EntityDimensions.fixed(fixedWidth, fixedHeight), factory)
     }
 }

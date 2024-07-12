@@ -1,4 +1,4 @@
-package org.wdfeer.evil_beetroot.entity
+package org.wdfeer.evil_beetroot.entity.spawn
 
 import kotlinx.coroutines.*
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents
@@ -12,6 +12,7 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Vec3d
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.config.BeetConfig
+import org.wdfeer.evil_beetroot.entity.BeetrootBoss
 import org.wdfeer.evil_beetroot.entity.SmallBeetroot.Companion.TYPE
 import org.wdfeer.evil_beetroot.util.nextSign
 import org.wdfeer.evil_beetroot.util.toVec3d

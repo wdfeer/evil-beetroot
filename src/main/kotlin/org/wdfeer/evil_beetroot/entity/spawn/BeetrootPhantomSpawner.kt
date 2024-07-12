@@ -1,4 +1,4 @@
-package org.wdfeer.evil_beetroot.entity
+package org.wdfeer.evil_beetroot.entity.spawn
 
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents
 import net.minecraft.block.BlockState
@@ -11,10 +11,11 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.random.Random
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.config.BeetConfig
+import org.wdfeer.evil_beetroot.entity.BeetrootPhantom
 
-object SmallBeetrootSpawner {
+object BeetrootPhantomSpawner {
     fun initialize() {
-        PlayerBlockBreakEvents.AFTER.register(SmallBeetrootSpawner::afterBlockBroken)
+        PlayerBlockBreakEvents.AFTER.register(BeetrootPhantomSpawner::afterBlockBroken)
     }
 
     private fun afterBlockBroken(world: World, player: PlayerEntity, pos: BlockPos, state: BlockState, blockEntity: BlockEntity?) {
@@ -23,12 +24,12 @@ object SmallBeetrootSpawner {
     }
 
     private fun afterBeetrootHarvested(world: World, pos: BlockPos){
-        if (Random.create().nextFloat() < BeetConfig.SMALL_BEETROOT_SPAWN_CHANCE)
-            summonEntity(SmallBeetroot(world) ,world, pos)
+        if (Random.create().nextFloat() < BeetConfig.PHANTOM_SPAWN_CHANCE)
+            summonEntity(BeetrootPhantom(world) ,world, pos)
     }
 
-    private fun summonEntity(entity: Entity, world: World, pos: BlockPos) {
-        entity.setPos(pos.x.toDouble(), pos.y + 0.5, pos.z.toDouble())
+    private fun summonEntity(entity: Entity, world: World, blockBrokenPos: BlockPos) {
+        entity.setPos(blockBrokenPos.x.toDouble(), blockBrokenPos.y + 50.0, blockBrokenPos.z.toDouble())
         world.spawnEntity(entity)
     }
 }
