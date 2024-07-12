@@ -60,8 +60,9 @@ class BeetrootBoss(world: World?) : HostileEntity(TYPE, world) {
             dropStack(ItemStack(Items.BEETROOT, Random.nextInt(1..6)))
         }
 
-        if (causedByPlayer && random.roll(BeetConfig.BOSS_SENTIENT_DROP_CHANCE))
-            dropStack(ItemStack(ModItems.SENTIENT_BEETROOT))
+        val sentients = Random.nextInt(BeetConfig.BOSS_SENTIENT_DROP_COUNT)
+        if (causedByPlayer && sentients > 0)
+            dropStack(ItemStack(ModItems.SENTIENT_BEETROOT, sentients))
 
         if (causedByPlayer && random.roll(BeetConfig.BOSS_HEART_DROP_CHANCE))
             dropItem(ModItems.BEETROOT_HEART)
