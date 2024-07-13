@@ -8,7 +8,7 @@ object BeetConfig { // TODO: Make this an actual Config
     const val SMALL_BEETROOT_SPAWN_CHANCE: Float = 0.04f
     const val SMALL_BEETROOT_SENTIENT_DROP_CHANCE: Float = 0.2f
 
-    const val PHANTOM_SPAWN_CHANCE: Float = 1f // TODO: set to a reasonable value
+    const val PHANTOM_SPAWN_CHANCE: Float = 0.04f
     const val PHANTOM_SENTIENT_DROP_CHANCE: Float = 0.4f
 
     const val BOSS_TRIGGER_KILLS: Int = 20
