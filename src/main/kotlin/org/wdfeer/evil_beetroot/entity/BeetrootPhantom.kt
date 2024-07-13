@@ -4,6 +4,8 @@ import net.minecraft.entity.EntityType
 import net.minecraft.entity.attribute.DefaultAttributeContainer
 import net.minecraft.entity.attribute.EntityAttributes
 import net.minecraft.entity.damage.DamageSource
+import net.minecraft.entity.effect.StatusEffectInstance
+import net.minecraft.entity.effect.StatusEffects
 import net.minecraft.entity.mob.HostileEntity
 import net.minecraft.entity.mob.PhantomEntity
 import net.minecraft.item.Items
@@ -35,5 +37,17 @@ class BeetrootPhantom(world: World?) : PhantomEntity(TYPE, world) {
             dropItem(ModItems.SENTIENT_BEETROOT, 1)
         else
             dropItem(Items.BEETROOT, 1)
+    }
+
+    override fun isAffectedByDaylight(): Boolean {
+        return false
+    }
+
+    override fun tickMovement() {
+        if (isAlive && super.isAffectedByDaylight()){
+            addStatusEffect(StatusEffectInstance(StatusEffects.RESISTANCE, 20))
+        }
+
+        super.tickMovement()
     }
 }
