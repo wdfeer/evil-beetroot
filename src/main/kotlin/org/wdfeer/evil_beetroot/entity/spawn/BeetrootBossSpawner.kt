@@ -14,9 +14,7 @@ import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.config.BeetConfig
 import org.wdfeer.evil_beetroot.entity.BeetrootBoss
 import org.wdfeer.evil_beetroot.entity.SmallBeetroot.Companion.TYPE
-import org.wdfeer.evil_beetroot.util.nextSign
-import org.wdfeer.evil_beetroot.util.toVec3d
-import org.wdfeer.evil_beetroot.util.toVec3i
+import org.wdfeer.evil_beetroot.util.*
 import kotlin.math.max
 import kotlin.random.Random
 
@@ -80,17 +78,15 @@ object BeetrootBossSpawner {
             val y = origin.y + Random.nextInt(max(SPAWN_DISTANCE - i, 1)) * Random.nextSign()
             val z = origin.z + (Random.nextInt(SPAWN_DISTANCE) + SPAWN_DISTANCE) * Random.nextSign()
 
-            val pos = Vec3d(x,y,z).toVec3i()
-            if (canSpawnAt(world, BlockPos(pos)))
-                return pos.toVec3d()
+            val pos = Vec3d(x,y,z)
+            if (canSpawnAt(world, BlockPos(pos.toVec3i())))
+                return pos
         }
         return origin
     }
 
     private fun canSpawnAt(world: World, pos: BlockPos): Boolean {
-        fun isSolid(pos: BlockPos): Boolean = world.getBlockState(pos).isSolidBlock(world, pos)
-
-        if (!isSolid(pos.down())) {
+        if (!world.isSolid(pos.down())) {
             return false
         }
 
@@ -101,7 +97,7 @@ object BeetrootBossSpawner {
         for (x in -halfAreaSize..halfAreaSize) {
             for (y in 0 until areaSize) {
                 for (z in -halfAreaSize..halfAreaSize) {
-                    if (isSolid(pos.add(x, y, z))) {
+                    if (world.isSolid(pos.add(x, y, z))) {
                         return false
                     }
                 }

@@ -4,9 +4,7 @@ import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents
 import net.minecraft.block.BlockState
 import net.minecraft.block.Blocks
 import net.minecraft.block.CropBlock
-import net.minecraft.block.entity.BlockEntity
 import net.minecraft.entity.Entity
-import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.random.Random
 import net.minecraft.world.World
@@ -15,10 +13,10 @@ import org.wdfeer.evil_beetroot.entity.SmallBeetroot
 
 object SmallBeetrootSpawner {
     fun initialize() {
-        PlayerBlockBreakEvents.AFTER.register(SmallBeetrootSpawner::afterBlockBroken)
+        PlayerBlockBreakEvents.AFTER.register { world, _, pos, state, _ -> afterBlockBroken(world, pos, state)}
     }
 
-    private fun afterBlockBroken(world: World, player: PlayerEntity, pos: BlockPos, state: BlockState, blockEntity: BlockEntity?) {
+    private fun afterBlockBroken(world: World, pos: BlockPos, state: BlockState) {
         if (state.block == Blocks.BEETROOTS && (Blocks.BEETROOTS as CropBlock).getAge(state) == 3)
             afterBeetrootHarvested(world, pos)
     }
