@@ -13,7 +13,7 @@ class BeetrootPhantomRenderer(context: EntityRendererFactory.Context) : MobEntit
     context, BeetrootPhantomModel(context.getPart(EntityModelLayers.BEETROOT_PHANTOM_MODEL_LAYER)), 0.75f
 ) {
     override fun getTexture(entity: BeetrootPhantom?): Identifier {
-        return EvilBeetrootMod.getIdentifier("textures/entity/small_beetroot/beetroot_phantom.png")
+        return EvilBeetrootMod.getIdentifier("textures/entity/beetroot_phantom.png")
     }
 
     init {

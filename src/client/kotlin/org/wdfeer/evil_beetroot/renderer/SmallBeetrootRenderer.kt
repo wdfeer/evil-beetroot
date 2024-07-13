@@ -12,6 +12,6 @@ class SmallBeetrootRenderer(context: EntityRendererFactory.Context) : MobEntityR
     context, SmallBeetrootModel(context.getPart(EntityModelLayers.SMALL_BEETROOT_MODEL_LAYER)), 0.5f
 ) {
     override fun getTexture(entity: SmallBeetroot?): Identifier {
-        return EvilBeetrootMod.getIdentifier("textures/entity/small_beetroot/small_beetroot.png")
+        return EvilBeetrootMod.getIdentifier("textures/entity/small_beetroot.png")
     }
 }
