@@ -5,21 +5,30 @@ import net.minecraft.block.BlockState
 import net.minecraft.block.Blocks
 import net.minecraft.block.CropBlock
 import net.minecraft.entity.Entity
+import net.minecraft.server.network.ServerPlayerEntity
+import net.minecraft.server.world.ServerWorld
+import net.minecraft.stat.Stats
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Vec3d
 import net.minecraft.world.World
 import org.wdfeer.evil_beetroot.config.BeetConfig
 import org.wdfeer.evil_beetroot.entity.BeetrootPhantom
+import org.wdfeer.evil_beetroot.entity.common.ModEntityTypes
 import org.wdfeer.evil_beetroot.util.*
 import kotlin.random.Random
 
 object BeetrootPhantomSpawner {
     fun initialize() {
-        PlayerBlockBreakEvents.AFTER.register { world, _, pos, state, _ -> afterBlockBroken(world, pos, state)}
+        PlayerBlockBreakEvents.AFTER.register { world, player, pos, state, _ ->
+            if (world is ServerWorld && player is ServerPlayerEntity)
+                afterBlockBroken(world, player, pos, state)
+        }
     }
 
-    private fun afterBlockBroken(world: World, pos: BlockPos, state: BlockState) {
-        if (state.block == Blocks.BEETROOTS && (Blocks.BEETROOTS as CropBlock).getAge(state) == 3)
+    private fun afterBlockBroken(world: ServerWorld, player: ServerPlayerEntity, pos: BlockPos, state: BlockState) {
+        if (state.block == Blocks.BEETROOTS &&
+            (Blocks.BEETROOTS as CropBlock).getAge(state) == 3 &&
+            player.statHandler.getStat(Stats.KILLED.getOrCreateStat(ModEntityTypes.beetrootBoss)) > 0)
             afterBeetrootHarvested(world, pos)
     }
 
