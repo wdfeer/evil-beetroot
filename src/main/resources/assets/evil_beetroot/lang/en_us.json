@@ -2,10 +2,8 @@
   "entity.evil_beetroot.small_beetroot": "Small Beetroot",
   "entity.evil_beetroot.beetroot_phantom": "Beetroot Phantom",
   "entity.evil_beetroot.beetroot_boss": "Beetroot Boss",
-
   "evil_beetroot.boss_triggered1": "You feel an ominous presence upon you.",
   "evil_beetroot.boss_triggered2": "Your actions have consequences.",
-
   "item.evil_beetroot.sentient_beetroot": "Sentient Beetroot",
   "item.evil_beetroot.beetroot_heart": "Beetroot Heart",
   "item.evil_beetroot.beetroot_diamond": "Beetroot Diamond",
@@ -20,7 +18,6 @@
   "item.evil_beetroot.beetroot_chestplate": "Beetroot Chestplate",
   "item.evil_beetroot.beetroot_leggings": "Beetroot Leggings",
   "item.evil_beetroot.beetroot_boots": "Beetroot Boots",
-
   "tooltip.evil_beetroot.beetroot_heart": "Right Click to gain +2 Max Health permanently",
   "tooltip.evil_beetroot.beetroot_heart_used": "Beetroot Heart has already been applied",
   "tooltip.evil_beetroot.beetroot_repair": "Uses Beetroot from inventory to repair itself once somewhat damaged",
